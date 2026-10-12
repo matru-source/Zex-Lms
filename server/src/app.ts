@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
 import cors from 'cors'
 
 export const app = express();
@@ -51,12 +51,12 @@ app.use("/api/v1/banner", bannerRoutes);
 app.use("/api/v1/client-logo", clientLogoRoutes);
 app.use("/api/v1/student-stories", studentStoriesRoutes);
 
-app.get("/", (req, res) => {
+app.get("/", (req: Request, res: Response) => {
   res.send("API is running...");
 })
 
 // --- Test email API endpoint ---
-app.post("/api/v1/test-email", async (req, res) => {
+app.post("/api/v1/test-email", async (req: Request, res: Response) => {
   const { email } = req.body;
   if (!email) {
     return res.status(400).json({ success: false, error: "Email is required" });
