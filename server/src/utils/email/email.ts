@@ -3,7 +3,7 @@ import axios from "axios";
 const BREVO_API_URL = "https://api.brevo.com/v3/smtp/email";
 
 const getSender = () => {
-    const defaultName = "Zex LMS Team";
+    const defaultName = "Learn with IITans Team";
     const senderName = process.env.BREVO_SENDER_NAME || defaultName;
     const senderEmail = process.env.BREVO_SENDER_EMAIL;
 
@@ -17,7 +17,7 @@ export function generateOTP(): string {
 // Helper function to get logo URL (use your actual domain in production)
 const getLogoUrl = () => {
     const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
-    return `${clientUrl}/erp.png`;
+    return `${clientUrl}/logo.png`;
 };
 
 // Enhanced professional email template wrapper with modern design
@@ -29,7 +29,7 @@ const getEmailTemplate = (content: string) => {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Zex LMS</title>
+        <title>Learn with IITans</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
             
@@ -467,8 +467,8 @@ const getEmailTemplate = (content: string) => {
                         <!-- Header -->
                         <div class="email-header">
                             <div class="email-header-content">
-                                <img src="${logoUrl}" alt="Zex LMS Logo" class="email-logo" />
-                                <h1>Zex LMS</h1>
+                                <img src="${logoUrl}" alt="Learn with IITans Logo" class="email-logo" />
+                                <h1>Learn with IITans</h1>
                             </div>
                         </div>
                         
@@ -479,7 +479,7 @@ const getEmailTemplate = (content: string) => {
                         
                         <!-- Footer -->
                         <div class="email-footer">
-                            <p class="footer-text">© ${new Date().getFullYear()} Zex LMS. All rights reserved.</p>
+                            <p class="footer-text">© ${new Date().getFullYear()} Learn with IITans. All rights reserved.</p>
                             <p class="footer-subtext">This is an automated email. Please do not reply to this message.</p>
                         </div>
                     </div>
@@ -515,7 +515,7 @@ export async function sendOTPEmail(email: string, otp: string): Promise<void> {
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: "Verify Your Email - Zex LMS",
+        subject: "Verify Your Email - Learn with IITans",
         htmlContent: getEmailTemplate(content),
     };
 
@@ -537,7 +537,7 @@ export async function sendWelcomeEmail(email: string, name: string): Promise<voi
     const content = `
         <div class="content-icon-box">
             <div class="content-icon">🎉</div>
-            <h2 class="section-title">Welcome to Zex LMS, ${name}!</h2>
+            <h2 class="section-title">Welcome to Learn with IITans, ${name}!</h2>
             <p class="section-subtitle">Your email has been successfully verified. You're all set to start your learning journey!</p>
         </div>
         
@@ -548,7 +548,7 @@ export async function sendWelcomeEmail(email: string, name: string): Promise<voi
         </div>
         
         <div class="content-section">
-            <h3 class="section-title" style="font-size: 18px; margin-top: 0;">Why Choose Zex LMS?</h3>
+            <h3 class="section-title" style="font-size: 18px; margin-top: 0;">Why Choose Learn with IITans?</h3>
             <ul class="features-list">
                 <li>Expert-led courses from industry professionals</li>
                 <li>Lifetime access to all course materials</li>
@@ -566,7 +566,7 @@ export async function sendWelcomeEmail(email: string, name: string): Promise<voi
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: "Welcome to Zex LMS! 🎉",
+        subject: "Welcome to Learn with IITans! 🎉",
         htmlContent: getEmailTemplate(content),
     };
 
@@ -607,7 +607,7 @@ export async function sendForgetPasswordOTPEmail(email: string, otp: string): Pr
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: "Password Reset Request - Zex LMS",
+        subject: "Password Reset Request - Learn with IITans",
         htmlContent: getEmailTemplate(content),
     };
 
@@ -646,7 +646,7 @@ export async function sendPasswordResetConfirmationEmail(email: string, name: st
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: "Password Reset Confirmation - Zex LMS",
+        subject: "Password Reset Confirmation - Learn with IITans",
         htmlContent: getEmailTemplate(content),
     };
 
@@ -675,7 +675,7 @@ export async function sendUserCreatedEmail(
     const content = `
         <div class="content-icon-box">
             <div class="content-icon">👋</div>
-            <h2 class="section-title">Welcome to Zex LMS, ${name}!</h2>
+            <h2 class="section-title">Welcome to Learn with IITans, ${name}!</h2>
             <p class="section-subtitle">Your account has been created successfully. You have been assigned the role of <strong>${roleDisplayName}</strong>.</p>
         </div>
         
@@ -710,7 +710,7 @@ export async function sendUserCreatedEmail(
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: `Welcome to Zex LMS - Your Account Has Been Created`,
+        subject: `Welcome to Learn with IITans - Your Account Has Been Created`,
         htmlContent: getEmailTemplate(content),
     };
 
@@ -763,7 +763,7 @@ export async function sendCourseSubmittedEmail(
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: `Course Submitted: ${courseTitle} - Zex LMS`,
+        subject: `Course Submitted: ${courseTitle} - Learn with IITans`,
         htmlContent: getEmailTemplate(content),
     };
 
@@ -808,7 +808,7 @@ export async function sendCourseSubmittedNotificationEmail(
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: `Review Required: ${courseTitle} - Zex LMS`,
+        subject: `Review Required: ${courseTitle} - Learn with IITans`,
         htmlContent: getEmailTemplate(content),
     };
 
@@ -857,7 +857,7 @@ export async function sendCourseApprovedEmail(
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: `Course Approved: ${courseTitle} - Zex LMS`,
+        subject: `Course Approved: ${courseTitle} - Learn with IITans`,
         htmlContent: getEmailTemplate(content),
     };
 
@@ -908,7 +908,7 @@ export async function sendCourseRejectedEmail(
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: `Course Review Feedback: ${courseTitle} - Zex LMS`,
+        subject: `Course Review Feedback: ${courseTitle} - Learn with IITans`,
         htmlContent: getEmailTemplate(content),
     };
 
@@ -958,7 +958,7 @@ export async function sendCoursePublishedEmail(
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: `Course Published: ${courseTitle} - Zex LMS`,
+        subject: `Course Published: ${courseTitle} - Learn with IITans`,
         htmlContent: getEmailTemplate(content),
     };
 
@@ -1002,7 +1002,7 @@ export async function sendChapterSubmittedEmail(
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: `Chapter Submitted: ${chapterTitle} - Zex LMS`,
+        subject: `Chapter Submitted: ${chapterTitle} - Learn with IITans`,
         htmlContent: getEmailTemplate(content),
     };
 
@@ -1043,7 +1043,7 @@ export async function sendChapterSubmittedNotificationEmail(
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: `Review Required: ${chapterTitle} - Zex LMS`,
+        subject: `Review Required: ${chapterTitle} - Learn with IITans`,
         htmlContent: getEmailTemplate(content),
     };
 
@@ -1083,7 +1083,7 @@ export async function sendChapterApprovedEmail(
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: `Chapter Approved: ${chapterTitle} - Zex LMS`,
+        subject: `Chapter Approved: ${chapterTitle} - Learn with IITans`,
         htmlContent: getEmailTemplate(content),
     };
 
@@ -1131,7 +1131,7 @@ export async function sendChapterRejectedEmail(
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: `Chapter Review Feedback: ${chapterTitle} - Zex LMS`,
+        subject: `Chapter Review Feedback: ${chapterTitle} - Learn with IITans`,
         htmlContent: getEmailTemplate(content),
     };
 
@@ -1175,7 +1175,7 @@ export async function sendLessonSubmittedEmail(
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: `Lesson Submitted: ${lessonTitle} - Zex LMS`,
+        subject: `Lesson Submitted: ${lessonTitle} - Learn with IITans`,
         htmlContent: getEmailTemplate(content),
     };
 
@@ -1216,7 +1216,7 @@ export async function sendLessonSubmittedNotificationEmail(
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: `Review Required: ${lessonTitle} - Zex LMS`,
+        subject: `Review Required: ${lessonTitle} - Learn with IITans`,
         htmlContent: getEmailTemplate(content),
     };
 
@@ -1256,7 +1256,7 @@ export async function sendLessonApprovedEmail(
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: `Lesson Approved: ${lessonTitle} - Zex LMS`,
+        subject: `Lesson Approved: ${lessonTitle} - Learn with IITans`,
         htmlContent: getEmailTemplate(content),
     };
 
@@ -1304,7 +1304,7 @@ export async function sendLessonRejectedEmail(
     const payload = {
         sender: getSender(),
         to: [{ email }],
-        subject: `Lesson Review Feedback: ${lessonTitle} - Zex LMS`,
+        subject: `Lesson Review Feedback: ${lessonTitle} - Learn with IITans`,
         htmlContent: getEmailTemplate(content),
     };
 

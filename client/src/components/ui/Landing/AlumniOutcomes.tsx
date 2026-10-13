@@ -39,7 +39,7 @@ export default function AlumniOutcomes() {
       newCompany: "PwC Advisory",
       hike: "+95% Salary Hike",
       quote:
-        "After a 2-year career break, Zex LMS served as the definitive launchpad. The verifiable digital badge proved my technical acumen directly to recruiters without friction.",
+        "After a 2-year career break, Learn with IITans served as the definitive launchpad. The verifiable digital badge proved my technical acumen directly to recruiters without friction.",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
       program: "IFS Applications & Business Acumen Master's",
       verified: true,

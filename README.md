@@ -1,4 +1,4 @@
-# Zex-Lms
+# Learn with IITans
 
 An enterprise Learning Management System (LMS) platform with role-based access for Admins, Instructors, and Students. Features include hierarchical course exploration, interactive video lectures, comprehensive quiz assessments, and analytics dashboards.
 

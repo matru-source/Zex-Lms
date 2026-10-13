@@ -91,7 +91,7 @@ export default function SimplilearnHero() {
               <div className="relative rounded-2xl overflow-hidden border border-slate-200/80 bg-white shadow-xl">
                 <img
                   src="/image.png"
-                  alt="Zex LMS Learner"
+                  alt="Learn with IITans Learner"
                   className="w-full h-[440px] object-cover object-top"
                   loading="eager"
                 />

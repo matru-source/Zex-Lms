@@ -62,12 +62,13 @@ export default function AsideLeft({ style }: { style?: React.CSSProperties }) {
             className="relative cursor-pointer hover:opacity-80 transition-opacity"
             title="Go to Dashboard"
           >
-            <div className="absolute inset-0 rounded-lg blur opacity-75"></div>
-            <img
-              src="/favicon.png"
-              className="relative h-10 w-10 object-contain rounded-lg transition-transform hover:scale-105"
-              alt="Zex LMS Logo"
-            />
+            <div className="p-1 bg-white rounded-xl shadow-xs border border-slate-200/50 flex items-center justify-center">
+              <img
+                src="/favicon.png"
+                className="relative h-9 w-9 object-contain rounded-lg transition-transform hover:scale-105"
+                alt="Learn with IITans Logo"
+              />
+            </div>
           </button>
         </div>
 
@@ -162,11 +163,11 @@ export default function AsideLeft({ style }: { style?: React.CSSProperties }) {
           className="flex items-center justify-center cursor-pointer group w-full relative"
           title="Go to Dashboard"
         >
-          <div className="relative overflow-hidden rounded-xl px-3 py-1.5 flex items-center justify-center mx-auto">
+          <div className="relative overflow-hidden rounded-xl px-3 py-1.5 bg-white shadow-xs border border-slate-200/50 flex items-center justify-center mx-auto">
             <img
               src="/logo.png"
-              className="h-16 sm:h-18 w-auto max-w-[210px] object-contain transition-transform duration-300 group-hover:scale-105 mx-auto"
-              alt="Zex LMS Logo"
+              className="h-10 sm:h-12 w-auto max-w-[200px] object-contain transition-transform duration-300 group-hover:scale-105 mx-auto"
+              alt="Learn with IITans Logo"
             />
             {/* Sleek Light Sheen */}
             <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-25 pointer-events-none" />

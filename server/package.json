@@ -1,5 +1,5 @@
 {
-  "name": "zex-lms-server",
+  "name": "learn-with-iitans-server",
   "version": "1.0.0",
   "description": "",
   "main": "dist/server.js",

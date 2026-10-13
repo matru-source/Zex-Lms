@@ -29,7 +29,7 @@ export default function CorporateUpskillingBanner() {
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-wider">
                 <Building2 className="w-4 h-4 text-white" />
-                Zex LMS for Enterprise & Teams
+                Learn with IITans for Enterprise & Teams
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">

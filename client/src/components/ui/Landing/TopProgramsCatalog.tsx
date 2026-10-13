@@ -108,7 +108,7 @@ export default function TopProgramsCatalog() {
       id: "ai-business-transformation",
       title: "AI-Powered Business Operations & Enterprise Automation",
       category: "ai",
-      partner: "Zex Enterprise",
+      partner: "Learn with IITans Enterprise",
       partnerBadge: "Executive Program",
       duration: "3 Months",
       format: "Executive Weekend",
@@ -145,7 +145,7 @@ export default function TopProgramsCatalog() {
       : c.category?.name?.toLowerCase().includes("ifs")
       ? "ifs"
       : "all",
-    partner: c.category?.name || "Zex LMS",
+    partner: c.category?.name || "Learn with IITans",
     partnerBadge: "Official Curriculum",
     duration: "12 Weeks",
     format: "Self-Paced + Live Doubt Clear",

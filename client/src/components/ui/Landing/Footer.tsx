@@ -26,7 +26,7 @@ export default function Footer() {
     {
       title: "Enterprise Solutions",
       links: [
-        { name: "Zex LMS for Business", href: "/corporate" },
+        { name: "Learn with IITans for Business", href: "/corporate" },
         { name: "Corporate Team Upskilling", href: "/corporate" },
         { name: "Custom Sandbox Environments", href: "/corporate" },
         { name: "Role-Based Learning Paths", href: "/corporate" },
@@ -36,7 +36,7 @@ export default function Footer() {
     {
       title: "Company",
       links: [
-        { name: "About Zex LMS", href: "/about" },
+        { name: "About Learn with IITans", href: "/about" },
         { name: "Leadership & Advisory", href: "/about" },
         { name: "Alumni Success Stories", href: "/#alumni" },
         { name: "Careers (We're Hiring!)", href: "/careers" },
@@ -87,7 +87,9 @@ export default function Footer() {
             {/* Column 1: Brand & Contact Info */}
             <div className="space-y-5">
               <Link to="/" className="inline-flex items-center gap-2">
-                <img src="/logo.png" alt="Zex LMS" className="h-9 w-auto brightness-200" />
+                <div className="bg-white px-3 py-1.5 rounded-xl shadow-xs border border-slate-700/50 inline-flex items-center">
+                  <img src="/logo.png" alt="Learn with IITans" className="h-8 w-auto object-contain" />
+                </div>
               </Link>
               <p className="text-xs text-slate-400 leading-relaxed">
                 The premier digital bootcamp and corporate upskilling academy for Oracle, SAP, IFS, and Next-Gen Cloud technologies.
@@ -100,7 +102,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Mail className="w-4 h-4 text-blue-400 shrink-0" />
-                  <span className="text-slate-300">support@zexlms.com</span>
+                  <span className="text-slate-300">support@learnwithiitans.com</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Globe className="w-4 h-4 text-blue-400 shrink-0" />
@@ -138,7 +140,7 @@ export default function Footer() {
       <div className="py-8 bg-slate-950">
         <div className="max-w-[1380px] mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            © {currentYear} Zex LMS Platform Inc. All rights reserved. Oracle, SAP, IFS, Microsoft, and AWS trademarks belong to their respective holders.
+            © {currentYear} Learn with IITans Platform Inc. All rights reserved. Oracle, SAP, IFS, Microsoft, and AWS trademarks belong to their respective holders.
           </div>
           <div className="flex items-center gap-6">
             <Link to="/privacy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>

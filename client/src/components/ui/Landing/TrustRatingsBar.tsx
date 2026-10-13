@@ -36,7 +36,7 @@ export default function TrustRatingsBar() {
             </div>
             <div>
               <h2 className="text-sm font-bold text-slate-900">
-                Join 50,000+ Learners Who Trust Zex LMS
+                Join 50,000+ Learners Who Trust Learn with IITans
               </h2>
               <p className="text-xs text-slate-500">
                 Rated independently by verified students and corporate cohorts

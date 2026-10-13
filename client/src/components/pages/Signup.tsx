@@ -268,7 +268,7 @@ export default function Signup() {
             >
               Welcome to
               <span className="block" style={{ color: "var(--primary)" }}>
-                Zex LMS
+                Learn with IITans
               </span>
             </h2>
             <p className="text-lg" style={{ color: "var(--muted-foreground)" }}>

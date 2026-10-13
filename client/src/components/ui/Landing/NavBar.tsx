@@ -122,14 +122,14 @@ export default function NavBar() {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <div
-              className="relative overflow-hidden rounded-lg px-2 py-1 cursor-pointer flex items-center group"
+              className="relative overflow-hidden rounded-lg px-2.5 py-1 bg-white dark:bg-white cursor-pointer flex items-center group shadow-xs border border-slate-200/60"
               onClick={() => navigate("/")}
-              title="Zex LMS"
+              title="Learn with IITans"
             >
               <img
                 src="/logo.png"
-                alt="Zex LMS"
-                className="h-11 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                alt="Learn with IITans"
+                className="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
               {/* Sleek Light Sheen */}
               <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-25 pointer-events-none" />
