@@ -86,10 +86,8 @@ export default function Footer() {
             
             {/* Column 1: Brand & Contact Info */}
             <div className="space-y-5">
-              <Link to="/" className="inline-flex items-center gap-2">
-                <div className="bg-white px-3 py-1.5 rounded-xl shadow-xs border border-slate-700/50 inline-flex items-center">
-                  <img src="/logo.png" alt="Learn with IITans" className="h-8 w-auto object-contain" />
-                </div>
+              <Link to="/" className="inline-flex items-center">
+                <img src="/logo.png" alt="Learn with IITans" className="h-10 w-auto object-contain" />
               </Link>
               <p className="text-xs text-slate-400 leading-relaxed">
                 The premier digital bootcamp and corporate upskilling academy for Oracle, SAP, IFS, and Next-Gen Cloud technologies.

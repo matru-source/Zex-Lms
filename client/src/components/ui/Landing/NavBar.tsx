@@ -121,19 +121,17 @@ export default function NavBar() {
         <div className="flex justify-between items-center h-16 min-w-0 overflow-visible">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <div
-              className="relative overflow-hidden rounded-lg px-2.5 py-1 bg-white dark:bg-white cursor-pointer flex items-center group shadow-xs border border-slate-200/60"
+            <button
               onClick={() => navigate("/")}
+              className="cursor-pointer flex items-center group focus:outline-none"
               title="Learn with IITans"
             >
               <img
                 src="/logo.png"
                 alt="Learn with IITans"
-                className="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
-              {/* Sleek Light Sheen */}
-              <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-25 pointer-events-none" />
-            </div>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
