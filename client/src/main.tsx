@@ -7,13 +7,9 @@ import { routes } from "./routes";
 import { ToastProvider } from "./contexts/ToastContext";
 import ToastContainer from "./components/lazy/Toast";
 
-// Initialize dark mode before React renders
-(function initializeTheme() {
-  const savedTheme = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const initialDark = savedTheme === "dark" || (!savedTheme && prefersDark);
-  document.documentElement.classList.toggle("dark", initialDark);
-})();
+// Clear dark mode and ensure standard clean theme
+document.documentElement.classList.remove("dark");
+localStorage.removeItem("theme");
 
 const router = createBrowserRouter(routes);
 

@@ -5,11 +5,9 @@ import {
   PanelLeftClose,
   PanelLeftOpen,
   ChevronRight,
-  Sun,
-  Moon,
   ShoppingCart,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 // import NotificationBell from "../ui/NotificationBell";
 import { useCartStore } from "../../state/cart";
 import { userStore } from "../../state/global";
@@ -19,24 +17,7 @@ export default function TopBar({ children }: { children?: React.ReactNode }) {
   const router = useRouter();
   const toogleSidebar = useSideBarStore((state) => state.toggleCollapse);
   const isSidebarCollapsed = useSideBarStore((state) => state.isCollapsed);
-  const [isDark, setIsDark] = useState(false);
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    const initialDark = savedTheme === "dark" || (!savedTheme && prefersDark);
-    setIsDark(initialDark);
-    document.documentElement.classList.toggle("dark", initialDark);
-  }, []);
-
-  const toggleTheme = () => {
-    const newDark = !isDark;
-    setIsDark(newDark);
-    document.documentElement.classList.toggle("dark", newDark);
-    localStorage.setItem("theme", newDark ? "dark" : "light");
-  };
 
   // Cart integration
   const { items: cartItems, fetchCart } = useCartStore();
@@ -127,14 +108,6 @@ export default function TopBar({ children }: { children?: React.ReactNode }) {
           </button>
         )}
 
-        {/* Theme Toggle Button */}
-        <button
-          onClick={toggleTheme}
-          className="p-2.5 rounded-lg bg-gradient-to-br from-[var(--muted)]/40 to-[var(--accent)]/20 hover:from-[var(--primary)]/20 hover:to-[var(--ring)]/15 transition-all duration-300 text-[var(--foreground)] hover:text-[var(--primary)] hover:shadow-md hover:scale-105 active:scale-95"
-          title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-        >
-          {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-        </button>
 
         {/* Notification Bell */}
         {/* <NotificationBell /> */}

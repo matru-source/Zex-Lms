@@ -4,7 +4,7 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { Sun, Moon, ChevronDown, Sparkles, CreditCard, Brain, MessageCircle, Compass } from "lucide-react";
+import { ChevronDown, Sparkles, CreditCard, Brain, MessageCircle, Compass } from "lucide-react";
 import useLogin from "../../../hooks/useLogin";
 import { userStore } from "../../../state/global";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +17,6 @@ export default function NavBar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchInput, setSearchInput] = useState("");
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [isDark, setIsDark] = useState(false);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const searchRef = useRef<HTMLDivElement>(null);
   const mobileSearchRef = useRef<HTMLDivElement>(null);
@@ -35,15 +34,6 @@ export default function NavBar() {
   const profileImage = user?.profilePhoto;
   const profileInitial = user?.name?.[0]?.toUpperCase() || "U";
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    const initialDark = savedTheme === "dark" || (!savedTheme && prefersDark);
-    setIsDark(initialDark);
-    document.documentElement.classList.toggle("dark", initialDark);
-  }, []);
 
   // Handle click outside to close search
   useEffect(() => {
@@ -64,12 +54,6 @@ export default function NavBar() {
     };
   }, []);
 
-  const toggleTheme = () => {
-    const newDark = !isDark;
-    setIsDark(newDark);
-    document.documentElement.classList.toggle("dark", newDark);
-    localStorage.setItem("theme", newDark ? "dark" : "light");
-  };
 
   
 
@@ -446,18 +430,6 @@ export default function NavBar() {
 
           {/* Right Section - Theme & Auth */}
           <div className="hidden lg:flex lg:items-center lg:space-x-3 flex-shrink-0">
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2.5 rounded-lg bg-[var(--muted)]/50 hover:bg-[var(--muted)] transition-all duration-300 hover:scale-105"
-              aria-label="Toggle theme"
-            >
-              {isDark ? (
-                <Sun className="w-5 h-5 text-[var(--foreground)]" />
-              ) : (
-                <Moon className="w-5 h-5 text-[var(--foreground)]" />
-              )}
-            </button>
 
             {!isLoading && !isLogedIn && (
               <div className="flex items-center space-x-2 pl-2 border-l border-[var(--border)]">
@@ -506,16 +478,7 @@ export default function NavBar() {
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center space-x-2">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg bg-[var(--muted)]/50 hover:bg-[var(--muted)] transition-all duration-300"
-            >
-              {isDark ? (
-                <Sun className="w-5 h-5 text-[var(--foreground)]" />
-              ) : (
-                <Moon className="w-5 h-5 text-[var(--foreground)]" />
-              )}
-            </button>
+
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-lg text-[var(--foreground)] hover:bg-[var(--muted)] transition-all duration-300"
