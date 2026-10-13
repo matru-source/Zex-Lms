@@ -199,28 +199,30 @@ export default function TopProgramsCatalog() {
         {/* 2-Column Catalog Container */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Left Column: Vertical Category Tabs */}
-          <div className="lg:col-span-3 sticky top-24 space-y-1.5 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-            <div className="px-3 py-2 text-xs font-bold text-slate-400 uppercase tracking-wider">
+          {/* Category Tabs: Scrollable pill bar on mobile/tablet, sticky sidebar on desktop */}
+          <div className="lg:col-span-3 lg:sticky lg:top-24 bg-slate-50 p-2 sm:p-2.5 rounded-xl border border-slate-200">
+            <div className="hidden lg:block px-3 py-2 text-xs font-bold text-slate-400 uppercase tracking-wider">
               Browse Domains
             </div>
-            {categories.map((cat) => {
-              const isActive = activeCategory === cat.id;
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => setActiveCategory(cat.id)}
-                  className={`w-full text-left px-4 py-3 rounded-lg text-sm font-semibold transition-all duration-150 flex items-center justify-between ${
-                    isActive
-                      ? "bg-[#0075eb] text-white shadow-sm"
-                      : "text-slate-700 hover:bg-white hover:text-slate-900"
-                  }`}
-                >
-                  <span>{cat.name}</span>
-                  {isActive && <ArrowRight className="w-4 h-4 text-white" />}
-                </button>
-              );
-            })}
+            <div className="flex lg:flex-col gap-1.5 overflow-x-auto lg:overflow-visible pb-1 lg:pb-0 scrollbar-none">
+              {categories.map((cat) => {
+                const isActive = activeCategory === cat.id;
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => setActiveCategory(cat.id)}
+                    className={`whitespace-nowrap px-4 py-2.5 lg:py-3 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-150 flex items-center justify-between gap-3 shrink-0 lg:shrink ${
+                      isActive
+                        ? "bg-[#0075eb] text-white shadow-sm"
+                        : "text-slate-700 bg-white/70 lg:bg-transparent hover:bg-white hover:text-slate-900 border border-slate-200/60 lg:border-transparent"
+                    }`}
+                  >
+                    <span>{cat.name}</span>
+                    {isActive && <ArrowRight className="hidden lg:inline w-4 h-4 text-white" />}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Right Column: 3-Column Course Grid */}

@@ -92,29 +92,29 @@ export default function SimplilearnHero() {
                 <img
                   src="/image.png"
                   alt="Learn with IITans Learner"
-                  className="w-full h-[440px] object-cover object-top"
+                  className="w-full h-[320px] sm:h-[440px] object-cover object-top"
                   loading="eager"
                 />
 
                 {/* Floating pill 1: Placement Rate */}
-                <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md border border-slate-100 shadow-lg rounded-xl px-4 py-2.5 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
-                    <Award className="w-5 h-5" />
+                <div className="absolute top-3 left-3 sm:top-6 sm:left-6 bg-white/95 backdrop-blur-md border border-slate-100 shadow-lg rounded-xl px-2.5 py-1.5 sm:px-4 sm:py-2.5 flex items-center gap-2 sm:gap-3">
+                  <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold shrink-0">
+                    <Award className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-semibold text-slate-900">85% Career Success</div>
-                    <div className="text-[11px] text-slate-500">Industry Hiring Guarantee</div>
+                    <div className="text-[11px] sm:text-xs font-bold text-slate-900 leading-tight">85% Career Success</div>
+                    <div className="text-[9px] sm:text-[11px] text-slate-500 leading-tight">Industry Hiring Guarantee</div>
                   </div>
                 </div>
 
                 {/* Floating pill 2: Live Cohorts */}
-                <div className="absolute bottom-6 right-6 bg-white/95 backdrop-blur-md border border-slate-100 shadow-lg rounded-xl px-4 py-2.5 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
-                    <Video className="w-5 h-5" />
+                <div className="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 bg-white/95 backdrop-blur-md border border-slate-100 shadow-lg rounded-xl px-2.5 py-1.5 sm:px-4 sm:py-2.5 flex items-center gap-2 sm:gap-3">
+                  <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold shrink-0">
+                    <Video className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-semibold text-slate-900">Live Mentorship</div>
-                    <div className="text-[11px] text-slate-500">Certified Enterprise Architects</div>
+                    <div className="text-[11px] sm:text-xs font-bold text-slate-900 leading-tight">Live Mentorship</div>
+                    <div className="text-[9px] sm:text-[11px] text-slate-500 leading-tight">Certified Architects</div>
                   </div>
                 </div>
               </div>

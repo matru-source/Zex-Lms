@@ -39,7 +39,7 @@ export default function Landing() {
       <AwardsAccolades />
 
       {/* 9. Talk to an Advisor / Consultation Request */}
-      <div className="bg-slate-50 py-16 border-t border-slate-200">
+      <div id="contact" className="bg-slate-50 py-16 border-t border-slate-200">
         <div className="max-w-[1380px] mx-auto px-6 lg:px-12">
           <GetInTouch />
         </div>

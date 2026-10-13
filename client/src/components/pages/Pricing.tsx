@@ -162,12 +162,12 @@ export default function Pricing() {
 
         {/* 3 Pricing Cards Grid */}
         <section className="py-16 -mt-10">
-          <div className="max-w-[1380px] mx-auto px-6 lg:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
               {plans.map((p, idx) => (
                 <div
                   key={idx}
-                  className={`relative rounded-2xl bg-white border transition-all duration-300 flex flex-col justify-between p-8 ${
+                  className={`relative rounded-2xl bg-white border transition-all duration-300 flex flex-col justify-between p-6 sm:p-8 ${
                     p.popular
                       ? "border-blue-500 ring-2 ring-blue-500/20 shadow-xl lg:-translate-y-4"
                       : "border-slate-200 shadow-2xs hover:shadow-lg"

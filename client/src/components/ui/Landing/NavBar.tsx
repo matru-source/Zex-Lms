@@ -4,7 +4,7 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { Sun, Moon, ChevronDown, Sparkles, CreditCard, Brain, MessageCircle } from "lucide-react";
+import { Sun, Moon, ChevronDown, Sparkles, CreditCard, Brain, MessageCircle, Compass } from "lucide-react";
 import useLogin from "../../../hooks/useLogin";
 import { userStore } from "../../../state/global";
 import { useNavigate } from "react-router-dom";
@@ -663,12 +663,20 @@ export default function NavBar() {
             </div>
 
             {/* Mobile Navigation Links */}
-            <a
-              href="#"
-              className="block px-3 py-2 rounded-lg text-base font-medium text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--muted)]/50 transition-all duration-300"
+            <button
+              onClick={() => {
+                navigate("/");
+                setIsMenuOpen(false);
+                setTimeout(() => {
+                  const el = document.getElementById("explore-programs");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+              }}
+              className="w-full text-left px-3 py-2.5 rounded-lg text-base font-medium text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--muted)]/50 transition-all duration-300 flex items-center gap-3"
             >
-              Brand
-            </a>
+              <Compass className="h-5 w-5 text-[var(--primary)]" />
+              <span>Explore Programs</span>
+            </button>
 
             <div>
               <button
@@ -677,9 +685,12 @@ export default function NavBar() {
                     openDropdown === "gateway-mobile" ? null : "gateway-mobile"
                   )
                 }
-                className="w-full text-left px-3 py-2 rounded-lg text-base font-medium text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--muted)]/50 transition-all duration-300 flex items-center justify-between"
+                className="w-full text-left px-3 py-2.5 rounded-lg text-base font-medium text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--muted)]/50 transition-all duration-300 flex items-center justify-between"
               >
-                Skills Gateway
+                <span className="flex items-center gap-3">
+                  <Sparkles className="h-5 w-5 text-[var(--primary)]" />
+                  <span>Skills Gateway</span>
+                </span>
                 <ChevronDown
                   className={`h-4 w-4 transition-all duration-300 ${
                     openDropdown === "gateway-mobile" ? "rotate-180" : ""
@@ -687,7 +698,7 @@ export default function NavBar() {
                 />
               </button>
               {openDropdown === "gateway-mobile" && (
-                <div className="pl-4 space-y-1 mt-1">
+                <div className="pl-6 space-y-1 mt-1 border-l-2 border-[var(--primary)]/30 ml-4">
                   {gatewayItems.map((item) => (
                     <button
                       key={item.path}
@@ -707,12 +718,24 @@ export default function NavBar() {
 
             <button
               onClick={() => {
+                navigate("/quizzes/explore");
+                setIsMenuOpen(false);
+              }}
+              className="w-full text-left px-3 py-2.5 rounded-lg text-base font-medium text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--muted)]/50 transition-all duration-300 flex items-center gap-3"
+            >
+              <Brain className="h-5 w-5 text-[var(--primary)]" />
+              <span>Quizzes & Assessments</span>
+            </button>
+
+            <button
+              onClick={() => {
                 navigate("/pricing");
                 setIsMenuOpen(false);
               }}
-              className="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--muted)]/50 transition-all duration-300"
+              className="w-full text-left px-3 py-2.5 rounded-lg text-base font-medium text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--muted)]/50 transition-all duration-300 flex items-center gap-3"
             >
-              Pricing
+              <CreditCard className="h-5 w-5 text-[var(--primary)]" />
+              <span>Tuition & Pricing</span>
             </button>
 
             <button
@@ -720,9 +743,10 @@ export default function NavBar() {
                 navigate("/corporate");
                 setIsMenuOpen(false);
               }}
-              className="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--muted)]/50 transition-all duration-300"
+              className="w-full text-left px-3 py-2.5 rounded-lg text-base font-medium text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--muted)]/50 transition-all duration-300 flex items-center gap-3"
             >
-              Corporate
+              <MessageCircle className="h-5 w-5 text-[var(--primary)]" />
+              <span>Corporate Training</span>
             </button>
 
             <div className="border-t border-[var(--border)] pt-3 mt-3">

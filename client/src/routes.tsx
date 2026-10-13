@@ -147,6 +147,42 @@ export const routes: Route = [
     element: <Pricing />,
   },
   {
+    path: "/courses",
+    element: <Landing />,
+  },
+  {
+    path: "/about",
+    element: <Landing />,
+  },
+  {
+    path: "/contact",
+    element: <Corporate />,
+  },
+  {
+    path: "/faq",
+    element: <Pricing />,
+  },
+  {
+    path: "/careers",
+    element: <Corporate />,
+  },
+  {
+    path: "/press",
+    element: <Landing />,
+  },
+  {
+    path: "/privacy",
+    element: <Landing />,
+  },
+  {
+    path: "/terms",
+    element: <Landing />,
+  },
+  {
+    path: "/cookies",
+    element: <Landing />,
+  },
+  {
     path: "/",
     element: <Landing />,
   },

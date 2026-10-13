@@ -130,21 +130,21 @@ export default function Corporate() {
       </section>
 
       {/* Benefits Stats */}
-      <section className="py-16 bg-[var(--card)] border-y border-[var(--border)]">
+      <section className="py-12 sm:py-16 bg-[var(--card)] border-y border-[var(--border)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-[var(--primary)]/10 text-[var(--primary)] mb-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[var(--primary)]/10 text-[var(--primary)] mb-3 sm:mb-4">
                   {benefit.icon}
                 </div>
-                <div className="text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-1">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-1">
                   {benefit.stat}
                 </div>
-                <div className="text-sm font-medium text-[var(--foreground)] mb-1">
+                <div className="text-xs sm:text-sm font-medium text-[var(--foreground)] mb-1">
                   {benefit.title}
                 </div>
-                <div className="text-xs text-[var(--muted-foreground)]">
+                <div className="text-[11px] sm:text-xs text-[var(--muted-foreground)]">
                   {benefit.description}
                 </div>
               </div>
@@ -154,23 +154,23 @@ export default function Corporate() {
       </section>
 
       {/* Corporate Options */}
-      <section className="py-20">
+      <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-4">
               Corporate Training Options
             </h2>
-            <p className="text-lg text-[var(--muted-foreground)] max-w-2xl mx-auto">
+            <p className="text-sm sm:text-lg text-[var(--muted-foreground)] max-w-2xl mx-auto">
               Choose from our range of corporate solutions designed to meet your
               organization's unique learning needs.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {corporateOptions.map((option, index) => (
               <div
                 key={index}
-                className="group bg-[var(--card)] rounded-2xl border border-[var(--border)] p-8 hover:border-[var(--primary)]/50 hover:shadow-xl transition-all duration-300"
+                className="group bg-[var(--card)] rounded-2xl border border-[var(--border)] p-6 sm:p-8 hover:border-[var(--primary)]/50 hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex items-start gap-4 mb-6">
                   <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-[var(--primary)]/20 to-blue-500/20 flex items-center justify-center text-[var(--primary)] group-hover:scale-110 transition-transform duration-300">

@@ -48,7 +48,7 @@ export default function Footer() {
       links: [
         { name: "Knowledge Base", href: "/faq" },
         { name: "Community Forum", href: "/forum" },
-        { name: "Free Skill Assessments", href: "/quizzes" },
+        { name: "Free Skill Assessments", href: "/quizzes/explore" },
         { name: "Tuition & Pricing Plans", href: "/pricing" },
         { name: "Webinars & Masterclasses", href: "/courses" },
         { name: "Curriculum Syllabi", href: "/courses" },
