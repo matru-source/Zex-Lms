@@ -428,13 +428,13 @@ export default function NavBar() {
             </button>
 
             {/* Pricing Link */}
-            <a
-              href="#"
+            <button
+              onClick={() => navigate("/pricing")}
               className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 text-white hover:text-white hover:bg-[var(--muted)]/50"
             >
               <CreditCard className="h-4 w-4 text-[var(--primary)] transition-transform duration-300 group-hover:rotate-12" />
               <span className="text-[var(--foreground)]">Pricing</span>
-            </a>
+            </button>
 
             {/* Corporate Link */}
             <button
@@ -707,12 +707,15 @@ export default function NavBar() {
               )}
             </div>
 
-            <a
-              href="#"
-              className="block px-3 py-2 rounded-lg text-base font-medium text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--muted)]/50 transition-all duration-300"
+            <button
+              onClick={() => {
+                navigate("/pricing");
+                setIsMenuOpen(false);
+              }}
+              className="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--muted)]/50 transition-all duration-300"
             >
               Pricing
-            </a>
+            </button>
 
             <button
               onClick={() => {

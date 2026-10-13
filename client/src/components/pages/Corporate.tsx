@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import NavBar from "../ui/Landing/NavBar";
+import Footer from "../ui/Landing/Footer";
 import {
   Building2,
   Users,
@@ -96,8 +98,10 @@ export default function Corporate() {
   ];
 
   return (
-    <div className="min-h-screen bg-[var(--background)]">
-      {/* Hero Section */}
+    <div className="min-h-screen bg-[var(--background)] flex flex-col">
+      <NavBar />
+      <main className="flex-1">
+        {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[var(--primary)]/10 via-[var(--background)] to-blue-500/10 py-20 lg:py-28">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-[var(--primary)]/20 rounded-full blur-3xl"></div>
@@ -285,6 +289,8 @@ export default function Corporate() {
           </button>
         </div>
       </section>
+      </main>
+      <Footer />
     </div>
   );
 }

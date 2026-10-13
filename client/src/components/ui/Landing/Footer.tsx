@@ -26,11 +26,11 @@ export default function Footer() {
     {
       title: "Enterprise Solutions",
       links: [
-        { name: "Zex LMS for Business", href: "/contact" },
-        { name: "Corporate Team Upskilling", href: "/contact" },
-        { name: "Custom Sandbox Environments", href: "/contact" },
-        { name: "Role-Based Learning Paths", href: "/contact" },
-        { name: "Enterprise Skills Analytics", href: "/contact" },
+        { name: "Zex LMS for Business", href: "/corporate" },
+        { name: "Corporate Team Upskilling", href: "/corporate" },
+        { name: "Custom Sandbox Environments", href: "/corporate" },
+        { name: "Role-Based Learning Paths", href: "/corporate" },
+        { name: "Enterprise Skills Analytics", href: "/corporate" },
       ],
     },
     {
@@ -49,6 +49,7 @@ export default function Footer() {
         { name: "Knowledge Base", href: "/faq" },
         { name: "Community Forum", href: "/forum" },
         { name: "Free Skill Assessments", href: "/quizzes" },
+        { name: "Tuition & Pricing Plans", href: "/pricing" },
         { name: "Webinars & Masterclasses", href: "/courses" },
         { name: "Curriculum Syllabi", href: "/courses" },
       ],

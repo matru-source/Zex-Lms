@@ -89,6 +89,7 @@ import Cart from "./components/pages/students/Cart";
 import ExploreLevels from "./components/pages/ExploreLevels";
 import AdminMediaManagement from "./components/pages/admin/AdminMediaManagement";
 import Corporate from "./components/pages/Corporate";
+import Pricing from "./components/pages/Pricing";
 
 type Route = {
   path: string;
@@ -140,6 +141,10 @@ export const routes: Route = [
   {
     path: "/corporate",
     element: <Corporate />,
+  },
+  {
+    path: "/pricing",
+    element: <Pricing />,
   },
   {
     path: "/",
